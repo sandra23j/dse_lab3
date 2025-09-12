@@ -1,0 +1,66 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+%matplotlib inline
+df=pd.read_csv("F500.csv")
+df.shape
+df.info()
+df.isnull()
+df.describe()
+df.describe(include='object')
+df.describe(include='all')
+Mean=df["Revenue (in millions)"].mean()
+print(Mean)
+Median=df["Revenue (in millions)"].median()
+print(Median)
+Mode=df["Revenue (in millions)"].mode()
+print(Mode)
+data=df['Revenue (in millions)']
+sns.displot(data=data)
+plt.show()
+Min=df['Revenue (in millions)'].min()
+print(Min)
+Max=df['Revenue (in millions)'].max()
+print(Max)
+Range=Max - Min
+print(Range)
+Variance=df['Revenue (in millions)'].var()
+print(Variance)
+S=df['Revenue (in millions)'].std()
+print(S)
+Q2=df['Revenue (in millions)'].quantile(0.5)
+print(Q2)
+Q3=df['Revenue (in millions)'].quantile(0.75)
+print(Q3)
+Q1=df['Revenue (in millions)'].quantile(0.25)
+print(Q1)
+IQR = Q3  - Q1
+
+IQR
+plt.boxplot(df['Revenue (in millions)'])
+
+plt.show()
+Skew=df['Revenue (in millions)'].skew()
+Skew
+
+Kurtosis=df['Revenue (in millions)'].kurtosis()
+Kurtosis
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
